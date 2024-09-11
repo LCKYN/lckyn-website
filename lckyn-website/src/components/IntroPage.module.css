@@ -1,0 +1,35 @@
+/* src/components/IntroPage.module.css */
+
+.noScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.noScrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Mask effect for the LCKYN text */
+.maskEffect {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    /* Ensures the text can't overflow outside the mask */
+}
+
+.maskEffect h1 {
+    position: relative;
+    /* This will animate the mask effect as you scroll */
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, black 100%);
+    mask-image: linear-gradient(to left, transparent 0%, black 100%);
+    transition: -webkit-mask-position 1.5s ease-out;
+}
+
+.maskEffect h1:hover {
+    /* Simulate scroll-based effect or hover-based test */
+    -webkit-mask-position: 100%;
+    mask-position: 100%;
+}

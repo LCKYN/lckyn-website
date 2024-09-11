@@ -1,5 +1,4 @@
+.next/
+node_modules/
 code_contents.txt
 gen_text_file.py
-
-lckyn-website/node_modules
-lckyn-website/.next
