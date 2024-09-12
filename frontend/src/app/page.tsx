@@ -6,13 +6,13 @@ export default function Home() {
     const { scrollY } = useScroll();
 
     return (
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative">
             {/* Intro Section */}
-            <animated.div
+            <animated.section
                 style={{
-                    opacity: scrollY.to([200, 600], [1, 0]) // Fade out between 200px and 600px
+                    opacity: scrollY.to([0, 400], [1, 0]),
                 }}
-                className="absolute inset-0 flex items-center justify-center bg-gray-900 text-white"
+                className="h-screen flex items-center justify-center bg-gray-900 text-white sticky top-0"
             >
                 <div className="border-2 border-blue-500 rounded p-8 max-w-4xl w-full mx-4 shadow-lg bg-gray-800">
                     <div className="text-center font-mono">
@@ -35,19 +35,22 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </animated.div>
+            </animated.section>
 
             {/* Hello World Section */}
-            <animated.div
+            <animated.section
                 style={{
-                    opacity: scrollY.to([400, 800], [0, 1]) // Fade in between 400px and 800px
+                    opacity: scrollY.to([400, 800], [0, 1]),
                 }}
-                className="absolute inset-0 flex items-center justify-center bg-gray-900 text-white"
+                className="h-screen flex items-center justify-center bg-gray-900 text-white sticky top-0"
             >
                 <div className="text-center">
                     <h1 className="text-7xl">Hello World</h1>
                 </div>
-            </animated.div>
+            </animated.section>
+
+            {/* Spacer to allow scrolling */}
+            <div style={{ height: '200vh' }}></div>
         </div>
     );
 }
