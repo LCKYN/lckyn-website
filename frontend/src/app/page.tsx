@@ -9,7 +9,7 @@ export default function Home() {
     const { scrollY } = useScroll();
 
     return (
-        <div className="relative h-[200vh]">
+        <div className="relative h-[400vh]">
             <div className="h-screen sticky top-0 overflow-hidden">
                 <IntroSection
                     style={{
