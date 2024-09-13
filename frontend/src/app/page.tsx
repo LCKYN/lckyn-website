@@ -9,7 +9,7 @@ export default function Home() {
     const { scrollY } = useScroll();
 
     return (
-        <div className="relative h-[400vh]">
+        <div className="relative h-[200vh]">
             <div className="h-screen sticky top-0 overflow-hidden">
                 <IntroSection
                     style={{
@@ -26,14 +26,14 @@ export default function Home() {
                         pointerEvents: scrollY.to(y => y < 800 ? 'none' : 'auto'),
                     }}
                 />
-                <HelloWorldSection
+                {/* <HelloWorldSection
                     style={{
                         opacity: scrollY.to(
                             [1100, 1400],
                             [0, 1]
                         ),
                     }}
-                />
+                /> */}
 
             </div>
         </div>
