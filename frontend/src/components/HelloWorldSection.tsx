@@ -1,9 +1,12 @@
 // src/components/HelloWorldSection.tsx
 import React from 'react';
-import { animated } from '@react-spring/web';
+import { animated, Interpolation } from '@react-spring/web';
 
 interface HelloWorldSectionProps {
-    style: React.CSSProperties;
+    style: {
+        opacity: Interpolation<number, 0 | 1>;
+        pointerEvents: Interpolation<number, "auto" | "none">;
+    };
 }
 
 const HelloWorldSection: React.FC<HelloWorldSectionProps> = ({ style }) => (

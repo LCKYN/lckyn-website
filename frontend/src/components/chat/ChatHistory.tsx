@@ -1,5 +1,4 @@
-// frontend/src/components/chat/ChatHistory.tsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 
 interface Message {
     id: number;
@@ -12,11 +11,11 @@ interface ChatHistoryProps {
 }
 
 const ChatHistory: React.FC<ChatHistoryProps> = ({ room }) => {
-    const messages: Message[] = [
+    const messages: Message[] = useMemo(() => [
         { id: 1, user: 'Alice', text: `Welcome to the ${room} room!` },
         { id: 2, user: 'Bob', text: 'Hi everyone!' },
         // Add more messages or fetch from an API
-    ];
+    ], [room]);
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
 

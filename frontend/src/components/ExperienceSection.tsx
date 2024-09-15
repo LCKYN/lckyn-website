@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { animated, useSpring } from '@react-spring/web';
+import { animated, useSpring, Interpolation } from '@react-spring/web';
 import { FaPython, FaReact, FaNode, FaDocker, FaDiscord } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
@@ -29,7 +29,10 @@ interface Experience {
 }
 
 interface ExperienceSectionProps {
-    style: React.CSSProperties;
+    style: {
+        opacity: Interpolation<number, 0 | 1>;
+        pointerEvents: Interpolation<number, "auto" | "none">;
+    };
 }
 
 const languageIcons: { [key: string]: JSX.Element } = {
@@ -142,9 +145,14 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ style }) => {
                 if (isMounted) {
                     setExperiences(data);
                 }
-            } catch (error: any) {
-                if (isMounted) {
-                    setError(error.message);
+            } catch (error: unknown) {
+                if (error instanceof Error) {
+                    if (isMounted) {
+                        setError(error.message);
+                    }
+                }
+                else if (isMounted) {
+                    setError(String(error)); // In case the error is not an instance of Error
                 }
             } finally {
                 if (isMounted) {

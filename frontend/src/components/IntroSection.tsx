@@ -1,10 +1,13 @@
 // frontend/src/components/IntroSection.tsx
 import React from 'react';
-import { animated } from '@react-spring/web';
+import { animated, Interpolation } from '@react-spring/web';
 import { FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 
 interface IntroSectionProps {
-    style: React.CSSProperties;
+    style: {
+        opacity: Interpolation<number, 0 | 1>;
+        pointerEvents: Interpolation<number, "auto" | "none">;
+    };
 }
 
 const IntroSection: React.FC<IntroSectionProps> = ({ style }) => (
@@ -16,7 +19,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ style }) => (
             <div className="border-2 border-blue-400 rounded p-8 max-w-4xl w-full mx-4 shadow-lg bg-gray-800">
                 <div className="text-center font-mono">
                     <h1 className="text-7xl font-light mb-4 select-none cursor-default">
-                        It's me, the <span className="text-blue-400 font-bold">LCKYN</span>
+                        It&apos;s me, the <span className="text-blue-400 font-bold">LCKYN</span>
                     </h1>
                     <p className="text-lg max-w-xl mx-auto mb-8 text-gray-300 select-none cursor-default">
                         Data Scientist and Machine Learning Engineer
@@ -37,7 +40,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ style }) => (
         </div>
         <div className="w-full text-center py-4 select-none cursor-default fira-code">
             <p className="text-sm text-gray-400">
-            Here is my weekend project, built from the dust. This humble beginning in web development is my canvas to introduce you to LCKYN. It's a glimpse into who I am and what I can create, and I'm excited to share it with you.
+                Here is my weekend project, built from the dust. This humble beginning in web development is my canvas to introduce you to LCKYN. It&apos;s a glimpse into who I am and what I can create, and I&apos;m excited to share it with you.
             </p>
         </div>
     </animated.section>
