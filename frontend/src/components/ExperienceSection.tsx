@@ -1,7 +1,6 @@
-// src/components/ExperienceSection.tsx
 import React, { useEffect, useState } from 'react';
 import { animated, useSpring } from '@react-spring/web';
-import { FaPython, FaReact, FaNode } from "react-icons/fa";
+import { FaPython, FaReact, FaNode, FaDocker, FaDiscord } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
     SiTypescript,
@@ -11,9 +10,11 @@ import {
     SiApachespark,
     SiApachesuperset,
     SiMinio,
-    SiTensorflow
+    SiTensorflow,
+    SiFlask
 } from "react-icons/si";
 import { BsFiletypeSql } from "react-icons/bs";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { ClipLoader } from 'react-spinners';
 
 // Import the custom CSS file
@@ -35,7 +36,7 @@ const languageIcons: { [key: string]: JSX.Element } = {
     python: <FaPython />,
     javascript: <IoLogoJavascript />,
     typescript: <SiTypescript />,
-    sql: <BsFiletypeSql />, // Added SQL icon
+    sql: <BsFiletypeSql />,
 };
 
 const getLanguageIcon = (language: string) => {
@@ -44,14 +45,18 @@ const getLanguageIcon = (language: string) => {
 
 const toolIcons: { [key: string]: JSX.Element } = {
     'pytorch': <SiPytorch />,
-    'TensorFlow': <SiTensorflow />, // Fixed TensorFlow icon
+    'TensorFlow': <SiTensorflow />,
     'pandas': <SiPandas />,
     'react': <FaReact />,
     'node.js': <FaNode />,
     'scikit-learn': <SiScikitlearn />,
-    'apache spark': <SiApachespark />,     // Added Apache Spark icon
-    'apache superset': <SiApachesuperset />, // Added Apache Superset icon
-    minio: <SiMinio />,                     // Added MinIO icon
+    'apache spark': <SiApachespark />,
+    'apache superset': <SiApachesuperset />,
+    'minio': <SiMinio />,
+    'docker': <FaDocker />,
+    'flask': <SiFlask />,
+    'PostgreSQL': <BiLogoPostgresql />,
+    'Discord API': <FaDiscord />,
 };
 
 const getToolIcon = (tool: string) => {
@@ -71,11 +76,12 @@ const ExperienceBox: React.FC<{ experience: Experience }> = ({ experience }) => 
     return (
         <animated.div
             style={hoverAnimation}
-            className="bg-gray-800 p-6 rounded-xl cursor-pointer transition-all duration-300 ease-in-out h-full flex flex-col fira-code"
+            className="bg-gray-800 p-6 rounded-xl cursor-pointer transition-all duration-300 ease-in-out h-full flex flex-col fira-code border border-gray-700"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <h3 className="text-2xl font-semibold mb-3">{experience.name}</h3>
+            <h3 className="text-2xl font-semibold mb-2">{experience.name}</h3>
+            <div className="border-t border-gray-700 my-2"></div>
             <p className="text-base text-gray-300 mb-4 flex-grow">{experience.description}</p>
             <div className="flex items-center justify-between mt-4">
                 <div className="flex items-center">

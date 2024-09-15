@@ -1,4 +1,4 @@
-// src/components/IntroSection.tsx
+// frontend/src/components/IntroSection.tsx
 import React from 'react';
 import { animated } from '@react-spring/web';
 import { FaGithub, FaEnvelope, FaLinkedin } from 'react-icons/fa';
@@ -10,7 +10,7 @@ interface IntroSectionProps {
 const IntroSection: React.FC<IntroSectionProps> = ({ style }) => (
     <animated.section
         style={style}
-        className="absolute inset-0 flex flex-col items-center justify-between bg-gray-900 text-white z-10"
+        className="absolute inset-0 flex flex-col items-center justify-between bg-gray-900 text-gray-100 z-10"
     >
         <div className="flex-grow flex items-center justify-center w-full">
             <div className="border-2 border-blue-400 rounded p-8 max-w-4xl w-full mx-4 shadow-lg bg-gray-800">
@@ -37,7 +37,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({ style }) => (
         </div>
         <div className="w-full text-center py-4 select-none cursor-default fira-code">
             <p className="text-sm text-gray-400">
-                Here is my weekend project, built from the dust. A humble beginning in web development that I'm eager to share with you.
+            Here is my weekend project, built from the dust. This humble beginning in web development is my canvas to introduce you to LCKYN. It's a glimpse into who I am and what I can create, and I'm excited to share it with you.
             </p>
         </div>
     </animated.section>

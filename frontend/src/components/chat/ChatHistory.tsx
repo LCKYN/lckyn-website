@@ -1,4 +1,4 @@
-// src/components/ChatHistory.tsx
+// frontend/src/components/chat/ChatHistory.tsx
 import React, { useEffect, useRef } from 'react';
 
 interface Message {
@@ -29,7 +29,7 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ room }) => {
         <div className="p-4 space-y-4">
             {messages.map((msg) => (
                 <div key={msg.id}>
-                    <span className="font-semibold">{msg.user}:</span> {msg.text}
+                    <span className="font-semibold text-blue-400">{msg.user}:</span> {msg.text}
                 </div>
             ))}
             <div ref={messagesEndRef} />

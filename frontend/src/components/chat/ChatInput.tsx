@@ -1,4 +1,4 @@
-// src/components/ChatInput.tsx
+// frontend/src/components/chat/ChatInput.tsx
 import React, { useState } from 'react';
 
 interface ChatInputProps {
@@ -23,14 +23,14 @@ const ChatInput: React.FC<ChatInputProps> = ({ room }) => {
         <form onSubmit={handleSend} className="flex">
             <input
                 type="text"
-                className="flex-1 border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="flex-1 bg-gray-700 text-gray-100 border border-gray-600 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder={`Message #${room}`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
             />
             <button
                 type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
                 Send
             </button>

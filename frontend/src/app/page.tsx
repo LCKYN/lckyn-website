@@ -2,15 +2,15 @@
 import React from 'react';
 import { useScroll } from '@react-spring/web';
 import IntroSection from '../components/IntroSection';
-import HelloWorldSection from '../components/HelloWorldSection';
 import ExperienceSection from '../components/ExperienceSection';
+import MaintenanceSection from '../components/MaintenanceSection';
 
 export default function Home() {
     const { scrollY } = useScroll();
 
     return (
         <div className="relative h-[400vh]">
-            <div className="h-screen sticky top-0 overflow-hidden">
+            <div className="h-screen sticky top-0 overflow-hidden fira-code">
                 <IntroSection
                     style={{
                         opacity: scrollY.to([0, 300], [1, 0]),
@@ -26,15 +26,14 @@ export default function Home() {
                         pointerEvents: scrollY.to(y => y < 800 ? 'none' : 'auto'),
                     }}
                 />
-                {/* <HelloWorldSection
+                <MaintenanceSection
                     style={{
                         opacity: scrollY.to(
                             [1100, 1400],
                             [0, 1]
                         ),
                     }}
-                /> */}
-
+                />
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-// src/app/chat/page.tsx
+// frontend/src/app/chat/page.tsx
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
@@ -7,7 +7,7 @@ import ChatWindow from '../../components/chat/ChatWindow';
 
 const ChatPage = () => {
     const [selectedRoom, setSelectedRoom] = useState<string>('General');
-    const [roomListWidth, setRoomListWidth] = useState<number>(250); // Initial width
+    const [roomListWidth, setRoomListWidth] = useState<number>(250);
     const isResizing = useRef<boolean>(false);
 
     const handleMouseDown = () => {
@@ -41,10 +41,10 @@ const ChatPage = () => {
     }, []);
 
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-gray-900 text-gray-100">
             {/* Left-hand side chat room list */}
             <div
-                className="border-r border-gray-300 bg-white"
+                className="border-r border-gray-700"
                 style={{ width: roomListWidth }}
             >
                 <ChatRoomList selectedRoom={selectedRoom} setSelectedRoom={setSelectedRoom} />
@@ -52,7 +52,7 @@ const ChatPage = () => {
 
             {/* Divider for resizing */}
             <div
-                className="w-1 bg-gray-300 cursor-col-resize"
+                className="w-1 bg-gray-700 cursor-col-resize"
                 onMouseDown={handleMouseDown}
             ></div>
 
