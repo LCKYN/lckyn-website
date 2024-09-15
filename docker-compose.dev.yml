@@ -11,8 +11,8 @@ services:
       - '3000:3000'
     volumes:
       - ./frontend:/app
-    environment:
-      - NODE_ENV=development
+    # environment:
+    #   - NODE_ENV=development
     networks:
       - app-network
 
