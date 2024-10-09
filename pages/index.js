@@ -1,22 +1,23 @@
 // pages/index.js
 import React from 'react';
+import Navbar from '../components/Navbar'; // Import Navbar
 import Section from '../components/Section';
 import { Hero } from '../components/sections/Hero';
 import { About } from '../components/sections/About';
 import { Experience } from '../components/sections/Experience';
 import { Footer } from '../components/sections/Footer';
 
-// pages/index.js
 const Home = () => {
     return (
-        <div className="bg-darker text-white min-h-screen pb-64">
+        <div className="bg-darker text-white min-h-screen flex flex-col">
+            <Navbar /> {/* Add Navbar */}
             <Hero />
 
-            <Section title="About Me">
+            <Section id="about-me" title="About Me">
                 <About />
             </Section>
 
-            <Section title="Experience">
+            <Section id="experience" title="Experience">
                 <Experience />
             </Section>
 
@@ -24,6 +25,5 @@ const Home = () => {
         </div>
     );
 };
-
 
 export default Home;
