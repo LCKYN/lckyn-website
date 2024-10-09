@@ -6,3 +6,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Hide any default caret in buttons */
+button::-webkit-details-marker,
+button::after {
+    display: none;
+}

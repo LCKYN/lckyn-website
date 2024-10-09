@@ -2,8 +2,8 @@
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 
 export const Footer = () => (
-    <footer className="bg-darkest text-white fixed bottom-0 left-0 w-full">
-        <div className="max-w-4xl mx-auto px-4 py-2">
+    <footer className="bg-darkest text-white w-full relative md:fixed md:bottom-0 md:left-0">
+        <div className="max-w-4xl mx-auto px-4 py-4">
             <div className="grid md:grid-cols-2 gap-4">
                 <ContactBlock
                     title="Get In Touch"

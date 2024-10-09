@@ -7,6 +7,7 @@ export const Hero = () => (
             It's me, the LCKYN
         </h1>
         <p className="text-gray">Data Scientist and Machine Learning Engineer</p>
+
         <div className="border-b border-darkGray max-w-4xl mx-auto"></div>
     </div>
 );
