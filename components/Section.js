@@ -11,7 +11,7 @@ const Section = ({
 }) => (
     <section
         id={id}
-        className={`w-full max-w-4xl mx-auto px-4 mb-16 min-h-screen flex flex-col justify-center ${className}`}
+        className={`w-full max-w-4xl mx-auto px-4 mb-16 min-h-60 flex flex-col justify-center ${className}`}
     >
         {title && (
             <h2 className={`text-3xl font-bold text-center mb-8 ${titleClassName}`}>

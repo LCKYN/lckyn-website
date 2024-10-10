@@ -9,7 +9,7 @@ import { Footer } from '../components/sections/Footer';
 
 const Home = () => {
     return (
-        <div className="bg-darker text-white min-h-screen flex flex-col pt-16 pb-32 md:pb-0 appearance-none">
+        <div className="bg-darker text-white min-h-screen flex flex-col pt-16 caret-transparent">
             <Navbar />
             <Hero />
 

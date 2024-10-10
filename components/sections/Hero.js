@@ -3,8 +3,8 @@ export const Hero = () => (
         id="hero"
         className="text-center mb-16 space-y-4 min-h-screen flex flex-col justify-center"
     >
-        <h1 className="text-6xl font-bold text-primary mb-8">
-            It's me, the LCKYN
+        <h1 className="text-6xl font-bold mb-8">
+            It's me, the <span className="text-primary">LCKYN</span>
         </h1>
         <p className="text-gray">Data Scientist and Machine Learning Engineer</p>
 

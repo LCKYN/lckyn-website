@@ -29,8 +29,10 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${showNavbar ? 'bg-darker shadow-lg' : 'bg-transparent'
-                } ${showNavbar ? '' : 'hidden'}`}
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${showNavbar
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 -translate-y-full pointer-events-none'
+                } bg-darker shadow-lg`}
         >
             <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
                 {/* Left Side */}
